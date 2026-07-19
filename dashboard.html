@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="dark" />
+<title>Dashboard — EduKids</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2/dist/tabler-icons.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="topnav" id="nav-root"></div>
+
+<div class="container">
+  <div class="page-header flex-between" style="align-items:flex-end;">
+    <div>
+      <h1 class="page-title">Dashboard</h1>
+      <p class="page-sub">Ringkasan aktivitas platform</p>
+    </div>
+
+    <div class="dash-controls">
+      <div class="control-item">
+        <div class="cta-group" id="cta-group">
+          <a href="bank-soal.html" class="btn btn-primary btn-sm"><i class="ti ti-plus"></i> Tambah soal</a>
+          <a href="buat-quiz.html" class="btn btn-primary btn-sm"><i class="ti ti-clipboard-list"></i> Buat quiz</a>
+          <a href="kelola-anak.html" class="btn btn-primary btn-sm"><i class="ti ti-users"></i> Kelola anak</a>
+        </div>
+        <button class="btn btn-icon" id="cta-toggle-btn" aria-label="Aksi cepat"><i class="ti ti-plus"></i></button>
+      </div>
+
+      <div class="control-divider"></div>
+
+      <div class="control-item">
+        <div class="filter-group" id="filter-group">
+          <select id="filter-jenjang">
+            <option value="">Semua jenjang</option>
+            <option value="SD">SD</option>
+            <option value="SMP">SMP</option>
+            <option value="SMA">SMA</option>
+          </select>
+          <select id="filter-kelas">
+            <option value="">Semua kelas</option>
+          </select>
+        </div>
+        <button class="btn btn-icon" id="filter-toggle-btn" aria-label="Filter jenjang & kelas"><i class="ti ti-filter"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-3" id="stats-grid">
+    <div class="stat-card"><div class="stat-label">Total soal</div><div class="stat-value">-</div></div>
+    <div class="stat-card"><div class="stat-label">Total quiz</div><div class="stat-value">-</div></div>
+    <div class="stat-card"><div class="stat-label">Total anak</div><div class="stat-value">-</div></div>
+  </div>
+
+  <p class="text-muted" style="font-size:12px; margin:-4px 0 4px;">Nilai rata-rata &amp; leaderboard untuk: <strong id="filter-scope-label">Semua jenjang &amp; kelas</strong></p>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <strong style="font-size:14px; display:block; margin-bottom:14px;">Nilai rata-rata</strong>
+      <div style="display:flex; align-items:baseline; gap:10px;">
+        <span style="font-size:28px; font-weight:700;" id="avg-score">-</span>
+        <span class="text-muted" style="font-size:13px;">(<span id="avg-count">0</span> pengerjaan)</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <strong style="font-size:14px; display:block; margin-bottom:14px;"><i class="ti ti-trophy"></i> Leaderboard</strong>
+      <div id="leaderboard-list"><p class="text-muted">Memuat...</p></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="flex-between" style="margin-bottom:12px;">
+      <strong style="font-size:14px;">Pengerjaan terbaru</strong>
+      <a href="nilai.html" style="font-size:12px;">Lihat semua →</a>
+    </div>
+    <div id="recent-list"><p class="text-muted">Memuat...</p></div>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabaseClient.js"></script>
+<script src="js/util.js"></script>
+<script src="js/adminAuth.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
