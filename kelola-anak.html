@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="dark" />
+<title>Kelola anak — EduKids</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2/dist/tabler-icons.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="topnav" id="nav-root"></div>
+
+<div class="container">
+  <div class="page-header">
+    <h1 class="page-title">Kelola anak</h1>
+    <p class="page-sub">Anak tidak perlu login. Tambahkan nama di sini, lalu pilih anaknya saat membuat link quiz.</p>
+  </div>
+
+  <div class="card">
+    <strong style="font-size:14px; display:block; margin-bottom:12px;">Tambah anak</strong>
+    <form id="anak-form" style="display:flex; gap:10px; align-items:flex-start;">
+      <input type="text" id="anak-nama" placeholder="Nama anak" required style="margin-bottom:0;" />
+      <button type="submit" class="btn btn-primary" style="white-space:nowrap;"><i class="ti ti-plus"></i> Tambah</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <strong style="font-size:14px; display:block; margin-bottom:12px;">Daftar anak</strong>
+    <div id="anak-list"><p class="text-muted">Memuat...</p></div>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabaseClient.js"></script>
+<script src="js/util.js"></script>
+<script src="js/adminAuth.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/kelola-anak.js"></script>
+</body>
+</html>
